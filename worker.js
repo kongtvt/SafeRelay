@@ -3770,7 +3770,7 @@ async function onMessage(message, origin) {
       if (text === '/start') {
         return sendMessage({
           chat_id: chatId,
-          text: '👋 欢迎使用 SafeRelay！\n\n您已在白名单中，可以直接发送消息给管理员。'
+          text: '哼！原来是你呀\n\n您已在白名单中，可以直接发送消息给主人。'
         });
       }
       return handleGuestMessage(message);
@@ -3783,7 +3783,7 @@ async function onMessage(message, origin) {
       if (isVerified) {
         return sendMessage({
           chat_id: chatId,
-          text: '👋 欢迎使用 SafeRelay！\n\n您已通过验证，可以直接发送消息给管理员。'
+          text: '📩 留言通道\n主人现在不在，你想说的话我会原封不动转达。至于他什么时候回……那就要看你留的内容够不够有趣了。'
         });
       } else {
         // 未验证，进入验证流程
@@ -7735,9 +7735,9 @@ async function handleQuizCallback(callbackQuery) {
       }
 
       // 构建成功消息
-      let successText = '✅ 验证成功！您现在可以发送消息给管理员了。';
+      let successText = '哼，勉为其难算你通过了！';
       if (pendingResult.forwarded > 0) {
-        successText = `✅ 验证成功！\n\n📩 刚才的 ${pendingResult.forwarded} 条消息已送达管理员。`;
+        successText = `哼，算你通过了！\n\n📩 刚才那 ${pendingResult.forwarded} 条消息，我已经默默帮你送达了，别太感谢我。`;
       }
 
       // 更新消息为成功状态
